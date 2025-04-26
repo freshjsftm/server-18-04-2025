@@ -3,7 +3,8 @@ const CONSTANTS = {
   DB_PORT: '27017',
   DB_NAME: 'mongo_5',
   UPLOAD_FOLDER: 'uploads/',
-  MAX_UPLOAD_SIZE: 5 * 1024 * 1024
+  MAX_UPLOAD_SIZE: 5 * 1024 * 1024,
+  AMOUNT:3,
 };
 
 module.exports = CONSTANTS;
