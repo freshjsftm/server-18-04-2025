@@ -5,10 +5,8 @@ const CONSTANTS = require('../constants');
 
 module.exports.createAthlete = async (req, res, next) => {
   try {
-    const { name, country, birthYear } = req.body;
-    const { idSport } = req.params;
-    console.log(idSport)
-    const sport = await Sport.findById(idSport);
+    const { name, country, birthYear, sportId } = req.body;
+    const sport = await Sport.findById(sportId);
     if (!sport) {
       return next(createError(404, 'Sport not found'));
     }
@@ -16,7 +14,7 @@ module.exports.createAthlete = async (req, res, next) => {
       ? `/${CONSTANTS.UPLOAD_FOLDER}${req.file.filename}`
       : null;
     const newAthlete = await Athlete.create({
-      name, country, birthYear, sportId: idSport, avatar
+      name, country, birthYear, sportId, avatar
     });
     res.status(201).send({ data: newAthlete });
   } catch (error) {

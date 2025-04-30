@@ -1,8 +1,0 @@
-POST http://localhost:3000/sports/680271d7e55fd993d635d202/athletes HTTP/1.1
-Content-Type: application/json
-
-{
-  "name": "Carlos Alcaraz",
-  "country": "Spain",
-  "birthYear": 2001
-}
