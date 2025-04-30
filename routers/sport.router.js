@@ -4,6 +4,7 @@ const upload = require('../middlewares/uploadImg');
 const { validateSportBody, buildSportFilter } = require('../middlewares/sport.mw');
 const { sportSchemaCreate, sportSchemaUpdate } = require('../validations/sport.validation');
 const { paginate } = require('../middlewares/pagination.mw');
+const athleteRouter = require('./athlete.router');
 
 const sportRouter = express.Router();
 
@@ -12,5 +13,7 @@ sportRouter.get('/',paginate, buildSportFilter, getAllSports);
 sportRouter.get('/:idSport', getSportById);
 sportRouter.patch('/:idSport', upload.single('image'), validateSportBody(sportSchemaUpdate), updateSportById);
 sportRouter.delete('/:idSport', deleteSportById);
+
+sportRouter.use('/:idSport/athletes',  athleteRouter);
 
 module.exports = sportRouter;

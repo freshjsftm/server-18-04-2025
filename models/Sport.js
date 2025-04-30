@@ -16,7 +16,7 @@ const sportSchema = new mongoose.Schema(
     },
     image: {
       type: String,
-      default: null, // 'folder/fileName.jpg'
+      default: null, 
     },
   },
   { timestamps: true }
