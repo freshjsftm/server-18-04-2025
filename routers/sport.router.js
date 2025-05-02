@@ -8,7 +8,7 @@ const { paginate } = require('../middlewares/pagination.mw');
 const sportRouter = express.Router();
 
 sportRouter.post( '/', upload.single('image'), validateSportBody(sportSchemaCreate),  createSport );
-sportRouter.get('/',paginate, buildSportFilter, getAllSports);
+sportRouter.get('/', paginate, buildSportFilter, getAllSports);
 sportRouter.get('/:idSport', getSportById);
 sportRouter.patch('/:idSport', upload.single('image'), validateSportBody(sportSchemaUpdate), updateSportById);
 sportRouter.delete('/:idSport', deleteSportById);
