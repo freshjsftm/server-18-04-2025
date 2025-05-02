@@ -12,4 +12,14 @@ const athleteSchemaPost = yup.object({
   sportId: yup.string().required(),
 });
 
-module.exports = { athleteSchemaPost };
+const athleteSchemaUpdate = yup.object({
+  name: yup.string().trim().min(6).max(255),
+  country: yup.string().trim().oneOf(CONSTANTS.COUNTRIES),
+  birthYear: yup
+    .number()
+    .min(1900)
+    .max(new Date().getFullYear() - 15),
+  sportId: yup.string(),
+});
+
+module.exports = { athleteSchemaPost, athleteSchemaUpdate };

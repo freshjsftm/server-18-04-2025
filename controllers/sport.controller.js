@@ -30,11 +30,11 @@ module.exports.getAllSports = async (req, res, next) => {
 module.exports.getSportById = async (req, res, next) => {
   try {
     const { idSport } = req.params;
-    const sport = await Sport.findById(idSport);
+    const sport = await Sport.findById(idSport).populate('athletes');
     if (!sport) {
       return next(createError(404, 'sport not found'));
     }
-    res.status(200).send({ data: sport });
+    res.status(200).send({ data: { sport } });
   } catch (error) {
     next(createError(400, error.message));
   }
@@ -60,7 +60,6 @@ module.exports.updateSportById = async (req, res, next) => {
     const updatedSport = await sport.save();
     res.status(200).send({ data: updatedSport });
   } catch (error) {
-    console.log(error);
     next(createError(400, error.message));
   }
 };
