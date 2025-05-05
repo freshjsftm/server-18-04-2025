@@ -4,7 +4,7 @@ const CONSTANTS = {
   DB_NAME: 'mongo_5',
   UPLOAD_FOLDER: 'uploads/',
   MAX_UPLOAD_SIZE: 5 * 1024 * 1024,
-  AMOUNT: 10,
+  AMOUNT: 100,
   COUNTRIES: [
     'Spain',
     'USA',
