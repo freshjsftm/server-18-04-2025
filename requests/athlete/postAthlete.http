@@ -2,8 +2,8 @@ POST http://localhost:3000/athletes HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Carlos Alcaraz",
-  "country": "Spain",
-  "birthYear": 1999,
-  "sportId": "680271d7e55fd993d635d202"
+  "name": "Florence Griffith-Joyner",
+  "country": "USA",
+  "birthYear": 1959,
+  "sportId": "680f8aca2a257e4ca2c38507"
 }

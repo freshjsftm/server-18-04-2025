@@ -4,8 +4,17 @@ const CONSTANTS = {
   DB_NAME: 'mongo_5',
   UPLOAD_FOLDER: 'uploads/',
   MAX_UPLOAD_SIZE: 5 * 1024 * 1024,
-  AMOUNT:3,
-  COUNTRIES: ['Spain', 'USA', 'Germany', 'Francia', 'Italy', 'Ukraine']
+  AMOUNT: 10,
+  COUNTRIES: [
+    'Spain',
+    'USA',
+    'Germany',
+    'France',
+    'Italy',
+    'Ukraine',
+    'New Zealand',
+    'England'
+  ],
 };
 
 module.exports = CONSTANTS;
